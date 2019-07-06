@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<script type="text/javascript" language="Javascript">
+	function calculate() {
+		var myBox1 = document.getElementById('box1').value;	
+		var myBox2 = document.getElementById('box2').value;
+		var myBox3 = document.getElementById('box3').value;	
+		var myBox4 = document.getElementById('box4').value;
+		var myBox5 = document.getElementById('box5').value;	
+		var myBox6 = document.getElementById('box6').value;
+		var result = document.getElementById('resultA');	
+		var result = document.getElementById('resultB');
+		var result = document.getElementById('resultC');
+		var result = document.getElementById('resultD');
+		var myA = myBox1 * myBox2;
+		resultA.value = myA;
+		var myB = myBox3 * myBox4;
+		resultB.value = myB;
+		var myC = myBox5 * myBox6;
+		resultC.value = myC;
+		var myD = myA + myB + myC;
+		resultD.value = myD;
+      		
+	}
+	 
+</script>
+
+
+
+<body>
+ <p>
+ Loaded wagon Gross weight Calculator in Tonn
+ </p> 
+<table width="" border="0">
+  <tr>
+    <th>Wagon no</th>
+    <th>Wagon type</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td><input id="box1" type="text"  maxlength="5" size="5" oninput="calculate()" /></td>
+    	<td>
+	<select name=select1  id="box2" oninput="calculate()">
+                <option selected="selected" value="1">None</option>
+                <option value="81.28">BOXN</option>
+                <option value="81.28">BOST</option>
+				<option value="91.6">BOXNHL</option>
+				<option value="81.28">BCN</option>
+				<option value="81.28">BCNA</option>
+				<option value="91.6">BCNHL</option>
+				<option value="81.28">BOBYN</option>
+				<option value="81.28">BOBRN</option>
+				<option value="81.28">BRN/BRNA</option>
+				<option value="81.28">BTPN</option>
+				<option value="23.5">BVZI</option>
+				<option value="13.96">BVZC</option>
+				
+				
+				
+            </select>
+	</td>
+    <td><input id="resultA" size="8" disabled /></td>
+  </tr>
+  <tr>
+    <td><input id="box3" type="text" maxlength="5" size="5" oninput="calculate()" /></td>
+    	<td>
+	<select name=select1  id="box4" oninput="calculate()">
+               <option selected="selected" value="1">None</option>
+			   <option value="81.28">BOXN</option>
+                <option value="81.28">BOST</option>
+				<option value="91.6">BOXNHL</option>
+				<option value="81.28">BCN</option>
+				<option value="81.28">BCNA</option>
+				<option value="91.6">BCNHL</option>
+				<option value="81.28">BOBYN</option>
+				<option value="81.28">BOBRN</option>
+				<option value="81.28">BRN/BRNA</option>
+				<option value="81.28">BTPN</option>
+				<option value="23.5">BVZI</option>
+				<option value="13.96">BVZC</option>
+            </select>
+	</td>
+	<td><input id="resultB" size="8" disabled /></td>
+  </tr>
+   <tr>
+    <td><input id="box5" type="text" maxlength="5" size="5" oninput="calculate()" /></td>
+    	<td>
+	<select name=select1  id="box6" oninput="calculate()">
+                <option selected="selected" value="1">None</option>
+              <option value="81.28">BOXN</option>
+                <option value="81.28">BOST</option>
+				<option value="91.6">BOXNHL</option>
+				<option value="81.28">BCN</option>
+				<option value="81.28">BCNA</option>
+				<option value="91.6">BCNHL</option>
+				<option value="81.28">BOBYN</option>
+				<option value="81.28">BOBRN</option>
+				<option value="81.28">BRN/BRNA</option>
+				<option value="81.28">BTPN</option>
+				<option value="23.5">BVZI</option>
+				<option value="13.96">BVZC</option>
+            </select>
+	</td>
+	<td><input id="resultC" size="8" disabled /></td>
+  </tr>
+  <tr>
+  <td></td>
+  <td>Gross weight = </td>
+  <td> <input id="resultD" size="8" disabled /></td>
+  </tr>
+  
+</table>
+  
+</body>
+</html>
+
+
