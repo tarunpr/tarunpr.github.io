@@ -113,6 +113,7 @@
         </div>
         <ul class="timeline__points">
           <li>ph-</li>
+<a href="http://example.com" class="download">share</a>
         </ul>
       </div>
     </li>
@@ -130,7 +131,7 @@
         </div>
         <ul class="timeline__points">
           <li>Dy SS -<a href="tel:7525001241">7525001241</a></li>
-		 <a href="whatsapp://send?text=Hello%20World!" class="button">  Share this </a>
+		 <a href="whatsapp://send?text=Hello%20World!" class="button">  Share this<i style="font-size:24px" class="fa">&#xf232;</i> </a>
         </ul>
       </div>
     </li>
@@ -148,7 +149,7 @@
         </div>
         <ul class="timeline__points">
           <li>ph-</li>
-		  <a href="https://www.w3docs.com/" class="button">Click Here</a>
+		 <button style="font-size:24px">Button <i class="fa fa-whatsapp"></i></button>
         </ul>
       </div>
     </li>
@@ -166,6 +167,7 @@
         </div>
         <ul class="timeline__points">
           <li>ph-</li>
+		  <div class="btn btn_red"><span class="icon"></span><a href="#">Crimson</a><span></span></div>
         </ul>
       </div>
     </li>
@@ -425,19 +427,77 @@
   
 </body>
 
+
+
+
+<style>
+.download {
+    background: none repeat scroll 0 0 padding-box #31621B;
+    border-radius: 6px;
+    box-shadow: 0 6px 0 #3E6C20, 0 6px 3px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    display: inline-block;
+    font: 400 2em/1 Helvetica,sans-serif;
+    padding: 0.64286em 0.85714em 0.53571em;
+    position: relative;
+}
+.download:visited {
+    color: #FFFFFF;
+}
+.download:hover, 
+.download:focus {
+    background: none repeat scroll 0 0 #518D2A;
+    box-shadow: 0 6px 0 #3E6C20, 0 6px 3px rgba(0, 0, 0, 0.4);
+    color: #FFFFFF!important;
+}
+.download:active {
+    box-shadow: 0 0 0 #3E6C20, 0 0 0 rgba(0, 0, 0, 0.4);
+    top: 6px;
+}
+.download:active:after {
+    top: -6px;
+}
+.download:before {
+    background: url("whatsapp.png") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    height: 30px;
+    margin-right: 13px;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 30px;
+}
+.download:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+</style>
+
 <style>
  .button {
-         background-color: #1c87c9;
-         border: none;
-         color: white;
-         padding: 20px 34px;
-         text-align: center;
-         text-decoration: none;
-         display: inline-block;
-         font-size: 20px;
-         margin: 4px 2px;
+  background:url('whatsapp.png') no-repeat left center;
+ background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
          cursor: pointer;
          }
+		 
+		 .btnTest{
+   background:url('whatsapp.png') no-repeat left center;
+   padding-left:20px;
+}
+.btn span.icon {
+    background: url(imgs/icon.png) no-repeat;
+    float: left;
+    width: 10px;
+    height: 40px;
+}
 
 .timeline {
   display: -webkit-flex;
