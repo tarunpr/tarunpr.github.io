@@ -1,14 +1,8 @@
 <head>
   <meta charset="UTF-8">
   <title>ALL SIDINGS</title>
-  
-  
-  
-      
-
-  
-</head>
-
+    
+  </head>
 
 
 
@@ -24,59 +18,93 @@
         </style>
     </head>
     <body>
-      <input type='text' id='txt_searchall' placeholder='search here'>&nbsp; 
-      <input type='text' id='txt_name' placeholder='Enter search name'>
-      <br/>
+      <input type='text' id='txt_searchall' placeholder='search here'>
+     
       <table width='100%' border='1' style='border-collapse:collapse;' >
           <thead>
           <tr>
               <th>CODE</th>
-              <th>ZONE</th>
               <th>NAME</th>
-              <th>COMMODITY</th>
+              <th>DIVISION</th>
+              <th>ZONE</th>
 			  
           </tr>
           </thead>
           <tbody>
             
             <tr>
-                <td>1</td>
-                <td>Yogesh singh</td>
-                <td>M.SC</td>
-                <td>Bhopal</td>
+                <td>AAFN</td>
+                <td>M/s Akhilesh agro farms pvt ltd</td>
+                <td>BZA</td>
+                <td>SCR</td>
             </tr>
             <tr>
-                <td>2</td>
-                <td>Sonarika Bhadoria</td>
-                <td>BE</td>
-                <td>Pune</td>
+                <td>AAK</td>
+                <td>Ankai Kila</td>
+                <td>BSL</td>
+                <td>CR</td>
             </tr>
             <tr>
-                <td>3</td>
-                <td>Vishal Sahu</td>
-                <td>BE</td>
-                <td>Indore</td>
+                <td>AAL</td>
+                <td>Amlai</td>
+                <td>BSP</td>
+                <td>SECR</td>
             </tr>
             <tr>
-                <td>4</td>
-                <td>Sunil Patel</td>
-                <td>MBA</td>
-                <td>Bhopal</td>
+                <td>AASM</td>
+                <td>Albion sdg no 1,Mahuda</td>
+                <td>ADRA</td>
+                <td>SER</td>
             </tr>
             <tr>
-                <td>5</td>
-                <td>Anil Singh</td>
-                <td>MCA</td>
-                <td>Delhi</td>
+                <td>ABBS</td>
+                <td>Burragarh sdg of bccl</td>
+                <td>ADRA</td>
+                <td>SER</td>
             </tr>
 			
 			
 			
 			 <tr>
-                <td>a</td>
-                <td>b</td>
-                <td>c</td>
-                <td>d</td>
+                <td>ABH</td>
+                <td>Ambarnath</td>
+                <td>CSTM</td>
+                <td>CR</td>
+            </tr>
+			
+			 <tr>
+                <td>ABHR</td>
+                <td>Bejidih Sgd of M/s ECL</td>
+                <td>ADRA</td>
+                <td>SER</td>
+            </tr>
+			
+			 <tr>
+                <td>ABJK</td>
+                <td>Bokaro Jharia sdg of m/s BCCL</td>
+                <td>ADRA</td>
+                <td>SER</td>
+            </tr>
+			
+			 <tr>
+                <td>ABKD</td>
+                <td>Bhowrah no 5, khanudih</td>
+                <td>ADRA</td>
+                <td>SER</td>
+            </tr>
+			
+			 <tr>
+                <td>ABKH</td>
+                <td>Bhowrah no 6, khanudih</td>
+                <td>ADRA</td>
+                <td>SER</td>
+            </tr>
+			
+			 <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
             </tr>
 			
 			
@@ -87,7 +115,43 @@
             </tr>
           </tbody>
         </table>
-        
+        <style>
+		#txt_searchall{
+  background-image: url('search.png'); /* Add a search icon to input */
+  background-position: 10px 10px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 24px; /* Increase font-size */
+  color: #47d682;
+  padding: 13px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th {
+color : #7c0fdb;
+}
+/* Style table headers and table data */
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+/* Zebra-striped table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+		
+		</style>
         <!-- Script -->
         <script type='text/javascript'>
             $(document).ready(function(){
