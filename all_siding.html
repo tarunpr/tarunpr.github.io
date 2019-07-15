@@ -1,219 +1,969 @@
+
 <head>
   <meta charset="UTF-8">
   <title>ALL SIDINGS</title>
     
   </head>
+<iframe id="srchform2" class="fixed" src="javascript:&#39;&lt;html&gt;&lt;body style=margin:0px; &gt;&lt;form action=\&#39;javascript:void();\&#39; onSubmit=if(this.t1.value!=\&#39;\&#39;)parent.findString(this.t1.value);return(false); &gt;&lt;input type=text id=t1 name=t1 placeholder=search  size=35&gt;&lt;input type=submit name=b1 value=SEARCH&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;&#39;" width="500" height="50" border="0" frameborder="0" scrolling="no" src="./Searching for text_ JavaScript_files/saved_resource(1).html">
+</iframe>
 
+<style>
 
-
-<!doctype html>
-<html>
-    <head>
-        <title>Indian Railway Goods Siding</title>
-        <script src='jquery-3.1.1.min.js' type='text/javascript'></script>
-        <style>
-          .notfound{
-            display: none;
-          }
-        </style>
-    </head>
-    <body>
-      <input type='text' id='txt_searchall' placeholder='search here'>
-     
-      <table width='100%' border='1' style='border-collapse:collapse;' >
-          <thead>
-          <tr>
-              <th>CODE</th>
-              <th>NAME</th>
-              <th>DIVISION</th>
-              <th>ZONE</th>
-			  
-          </tr>
-          </thead>
-          <tbody>
-            
-            <tr>
-                <td>AAFN</td>
-                <td>M/s Akhilesh agro farms pvt ltd</td>
-                <td>BZA</td>
-                <td>SCR</td>
-            </tr>
-            <tr>
-                <td>AAK</td>
-                <td>Ankai Kila</td>
-                <td>BSL</td>
-                <td>CR</td>
-            </tr>
-            <tr>
-                <td>AAL</td>
-                <td>Amlai</td>
-                <td>BSP</td>
-                <td>SECR</td>
-            </tr>
-            <tr>
-                <td>AASM</td>
-                <td>Albion sdg no 1,Mahuda</td>
-                <td>ADRA</td>
-                <td>SER</td>
-            </tr>
-            <tr>
-                <td>ABBS</td>
-                <td>Burragarh sdg of bccl</td>
-                <td>ADRA</td>
-                <td>SER</td>
-            </tr>
-			
-			
-			
-			 <tr>
-                <td>ABH</td>
-                <td>Ambarnath</td>
-                <td>CSTM</td>
-                <td>CR</td>
-            </tr>
-			
-			 <tr>
-                <td>ABHR</td>
-                <td>Bejidih Sgd of M/s ECL</td>
-                <td>ADRA</td>
-                <td>SER</td>
-            </tr>
-			
-			 <tr>
-                <td>ABJK</td>
-                <td>Bokaro Jharia sdg of m/s BCCL</td>
-                <td>ADRA</td>
-                <td>SER</td>
-            </tr>
-			
-			 <tr>
-                <td>ABKD</td>
-                <td>Bhowrah no 5, khanudih</td>
-                <td>ADRA</td>
-                <td>SER</td>
-            </tr>
-			
-			 <tr>
-                <td>ABKH</td>
-                <td>Bhowrah no 6, khanudih</td>
-                <td>ADRA</td>
-                <td>SER</td>
-            </tr>
-			
-			 <tr>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-			
-			
-			
-			
-            <tr class='notfound'>
-              <td colspan='4'>No record found</td>
-            </tr>
-          </tbody>
-        </table>
-        <style>
-		#txt_searchall{
-  background-image: url('search.png'); /* Add a search icon to input */
-  background-position: 10px 10px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 100%; /* Full-width */
-  font-size: 24px; /* Increase font-size */
-  color: #47d682;
-  padding: 13px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
+iframe.fixed {
+  position: fixed;
+  top: 0;
+  left: 50;
+  
+  
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+<!--
+var TRange=null;
+
+function findString (str) {
+ if (parseInt(navigator.appVersion)<4) return;
+ var strFound;
+ if (window.find) {
+
+  // CODE FOR BROWSERS THAT SUPPORT window.find
+
+  strFound=self.find(str);
+  if (!strFound) {
+   strFound=self.find(str,0,1);
+   while (self.find(str,0,1)) continue;
+  }
+ }
+ else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+  // EXPLORER-SPECIFIC CODE
+
+  if (TRange!=null) {
+   TRange.collapse(false);
+   strFound=TRange.findText(str);
+   if (strFound) TRange.select();
+  }
+  if (TRange==null || strFound==0) {
+   TRange=self.document.body.createTextRange();
+   strFound=TRange.findText(str);
+   if (strFound) TRange.select();
+  }
+ }
+ else if (navigator.appName=="Opera") {
+  alert ("Opera browsers not supported, sorry...")
+  return;
+ }
+ if (!strFound) alert ("String '"+str+"' not found!")
+ return;
 }
-th {
-color : #7c0fdb;
-}
-/* Style table headers and table data */
-th, td {
-  text-align: center;
-  padding: 16px;
-}
-
-th:first-child, td:first-child {
-  text-align: left;
-}
-
-/* Zebra-striped table rows */
-tr:nth-child(even) {
-  background-color: #f2f2f2
-}
-		
-		</style>
-        <!-- Script -->
-        <script type='text/javascript'>
-            $(document).ready(function(){
-
-                // Search all columns
-                $('#txt_searchall').keyup(function(){
-                    // Search Text
-                    var search = $(this).val();
-
-                    // Hide all table tbody rows
-                    $('table tbody tr').hide();
-
-                    // Count total search result
-                    var len = $('table tbody tr:not(.notfound) td:contains("'+search+'")').length;
-
-                    if(len > 0){
-                      // Searching text in columns and show match row
-                      $('table tbody tr:not(.notfound) td:contains("'+search+'")').each(function(){
-                          $(this).closest('tr').show();
-                      });
-                    }else{
-                      $('.notfound').show();
-                    }
-                    
-                });
-
-                // Search on name column only
-                $('#txt_name').keyup(function(){
-                    // Search Text
-                    var search = $(this).val();
-
-                    // Hide all table tbody rows
-                    $('table tbody tr').hide();
-
-                    // Count total search result
-                    var len = $('table tbody tr:not(.notfound) td:nth-child(2):contains("'+search+'")').length;
-                    
-                    if(len > 0){
-                      // Searching text in columns and show match row
-                      $('table tbody tr:not(.notfound) td:contains("'+search+'")').each(function(){
-                          $(this).closest('tr').show();
-                      });
-                    }else{
-                      $('.notfound').show();
-                    }
-                    
-                });
-               
-            });
-
-            // Case-insensitive searching (Note - remove the below script for Case sensitive search )
-            $.expr[":"].contains = $.expr.createPseudo(function(arg) {
-                return function( elem ) {
-                    return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-                };
-            });
-        </script>
-    </body>
-</html>
+//-->
+</script>
 
 
 
 
+<table>
+					<tbody><tr>
+						<td>
+								
 
 
+								
+								<table border="1" bordercolor="teal" cellspacing="0" cellpadding="0" id="siding">
+									<tbody>
+										<tr>
+											<td align="center" width="70"><font size="-1"> <b>ZONE
+											<br>
+											</b> </font></td>
+											<td align="center" width="70"><font size="-1"> <b>CODE
+											<br>
+											</b> </font></td>
+											<td align="center" nowrap="" width="231"><font size="-1">
+											<b>SIDING NAME</b> </font></td>
+											<td align="center" width="46"><font size="-1"> <b>SERVING
+											STATION</b> </font></td>
+										
+
+										</tr>
+
+										
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BGSN 
+											</td>
+											<td align="center" width="231" height="43">BUFFER STORAGE GODOWN SIDING                                </td>
+											<td align="center" width="88" height="43">NRPA</td>
+											
+
+										</tr>
+										
+
+
+										
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BPCM 
+											</td>
+											<td align="center" width="231" height="43">BPC LTD SIDING MUGALSARAI                                   </td>
+											<td align="center" width="88" height="43">MGS </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BPCM 
+											</td>
+											<td align="center" width="231" height="43">BPC LTD SIDING MUGALSARAI                                   </td>
+											<td align="center" width="88" height="43">DDU </td>
+											
+
+										</tr>
+										
+
+
+										
+									
+										
+
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BPNA 
+											</td>
+											<td align="center" width="231" height="43">BPCL SIDING NARAYANPUR ANANT                                </td>
+											<td align="center" width="88" height="43">NRPA</td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BSDC 
+											</td>
+											<td align="center" width="231" height="43">BIRDS SONDA COLLIERY SIDING                                 </td>
+											<td align="center" width="88" height="43">PTRU</td>
+										
+
+										</tr>
+										
+
+
+									
+										
+
+
+									
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BSPB 
+											</td>
+											<td align="center" width="231" height="43">BARH SUPER THERMAL POWER PROJECT                            </td>
+											<td align="center" width="88" height="43">BARH</td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BTSS 
+											</td>
+											<td align="center" width="231" height="43">BARAUNI THERMAL POWER STATION SIDING                        </td>
+											<td align="center" width="88" height="43">SAE </td>
+										
+
+										</tr>
+										
+
+
+										
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BWCM 
+											</td>
+											<td align="center" width="231" height="43">BHARAT WAGON AND ENGG CO LTD SIDING                         </td>
+											<td align="center" width="88" height="43">MFP </td>
+											
+
+										</tr>
+										
+
+
+									
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 BWEM 
+											</td>
+											<td align="center" width="231" height="43">BHARAT WAGON AND ENGG WORKS MOKAMA                          </td>
+											<td align="center" width="88" height="43">MKA </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 CCSP 
+											</td>
+											<td align="center" width="231" height="43">T B COLLIERY SIDING                                         </td>
+											<td align="center" width="88" height="43">PEH </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 CCSP 
+											</td>
+											<td align="center" width="231" height="43">T B COLLIERY SIDING                                         </td>
+											<td align="center" width="88" height="43">PEH </td>
+											
+										</tr>
+										
+
+
+									
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 CSCP 
+											</td>
+											<td align="center" width="231" height="43">CENTRAL SONDA COLLIERY SIDING                               </td>
+											<td align="center" width="88" height="43">PTRU</td>
+										
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 DDCW 
+											</td>
+											<td align="center" width="231" height="43">DUGDA COAL WASHERY SDG                                      </td>
+											<td align="center" width="88" height="43">CRP </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 DNCS 
+											</td>
+											<td align="center" width="231" height="43">DHORI NSD COLLIERY SIDING PHUSRO                            </td>
+											<td align="center" width="88" height="43">PUS </td>
+										
+										</tr>
+										
+
+
+															
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 DNSD 
+											</td>
+											<td align="center" width="231" height="43">DHORI NSD COLLY. SIDING,PHUSRO, LINE NO. II                 </td>
+											<td align="center" width="88" height="43">PUS </td>
+											
+
+										</tr>
+										
+
+
+								
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 FCD  
+											</td>
+											<td align="center" width="231" height="43">FCI SDG, DHANBAD                                            </td>
+											<td align="center" width="88" height="43">DHN </td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 FCDG 
+											</td>
+											<td align="center" width="231" height="43">FCI SIDING DIGHAGHAT                                        </td>
+											<td align="center" width="88" height="43">DDG </td>
+																				</tr>
+										
+
+
+									
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 FCMI 
+											</td>
+											<td align="center" width="231" height="43">FCI SIDING MOKAMA                                           </td>
+											<td align="center" width="88" height="43">MKA </td>
+											
+											
+
+										</tr>
+										
+
+
+									
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 FCPD 
+											</td>
+											<td align="center" width="231" height="43">FCI PVT SIDING PHULWARI SHARIF                              </td>
+											<td align="center" width="88" height="43">DNR </td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 FFSB 
+											</td>
+											<td align="center" width="231" height="43">FCI SIDING BUXAR                                            </td>
+											<td align="center" width="88" height="43">BXR </td>
+											
+											
+
+										</tr>
+										
+
+
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 GCSP 
+											</td>
+											<td align="center" width="231" height="43">GIDDI'A' COLLIERY SIDING PATRATU                            </td>
+											<td align="center" width="88" height="43">PTRU</td>
+											
+											
+
+										</tr>
+										
+
+
+										
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 GCWP 
+											</td>
+											<td align="center" width="231" height="43">GIDDI A COLLIERY SIDING                                     </td>
+											<td align="center" width="88" height="43">PTRU</td>
+											
+											
+
+										</tr>
+										
+
+
+									
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 GRRK 
+											</td>
+											<td align="center" width="231" height="43">GARERIA COLLIERY SIDING                                     </td>
+											<td align="center" width="88" height="43">KDS </td>
+											
+											
+
+										</tr>
+										
+
+
+										
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 HPSB 
+											</td>
+											<td align="center" width="231" height="43">HPCL POL SIDING                                             </td>
+											<td align="center" width="88" height="43">BTA </td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 IFSG 
+											</td>
+											<td align="center" width="231" height="43">IOC SIDING SIMARIA                                          </td>
+											<td align="center" width="88" height="43">SAE </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 JCS  
+											</td>
+											<td align="center" width="231" height="43">Jogta Coal Siding                                           </td>
+											<td align="center" width="88" height="43">SJA </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 JMNK 
+											</td>
+											<td align="center" width="231" height="43">BLOCK II JAMUNI WASHERY SIDING                              </td>
+											<td align="center" width="88" height="43">KTH </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 JSPP 
+											</td>
+											<td align="center" width="231" height="43">Jindal steel&amp; power ltd. pvt. siding                        </td>
+											<td align="center" width="88" height="43">PTRU</td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KCLS 
+											</td>
+											<td align="center" width="231" height="43">KCL SIDING SONENAGAR                                        </td>
+											<td align="center" width="88" height="43">SEB </td>
+										
+
+										</tr>
+										
+
+
+									
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KDSK 
+											</td>
+											<td align="center" width="231" height="43">KUSUNDA SIDING                                              </td>
+											<td align="center" width="88" height="43">KDS </td>
+										
+
+										</tr>
+										
+
+
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KESK 
+											</td>
+											<td align="center" width="231" height="43">KODERMA EXTENSION PUBLIC SIDING (PIPRADIH)                  </td>
+											<td align="center" width="88" height="43">KQR </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KGCK 
+											</td>
+											<td align="center" width="231" height="43">KESARGARH COLLIERY SIDING                                   </td>
+											<td align="center" width="88" height="43">KTH </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KGWS 
+											</td>
+											<td align="center" width="231" height="43">KHARGALI SIDING                                             </td>
+											<td align="center" width="88" height="43">BRMO</td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KGWS 
+											</td>
+											<td align="center" width="231" height="43">KHARGALI SIDING                                             </td>
+											<td align="center" width="88" height="43">BRMO</td>
+										
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KPSH 
+											</td>
+											<td align="center" width="231" height="43">Koderma Thermal power station                               </td>
+											<td align="center" width="88" height="43">HRE </td>
+											
+											
+
+										</tr>
+										
+
+
+										
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KSNT 
+											</td>
+											<td align="center" width="231" height="43">KHALARI SDG, NO.2                                           </td>
+											<td align="center" width="88" height="43">KLRE</td>
+											
+										
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KWJP 
+											</td>
+											<td align="center" width="231" height="43">Kargali Washery Siding PF-II                                </td>
+											<td align="center" width="88" height="43">PUS </td>
+											
+											
+
+										</tr>
+										
+
+
+										
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 KWSP 
+											</td>
+											<td align="center" width="231" height="43">KATHRA WASHERY SIDING                                       </td>
+											<td align="center" width="88" height="43">JAN </td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 LCPS 
+											</td>
+											<td align="center" width="231" height="43">LODNA COKE PLANT SIDING                                     </td>
+												<td align="center" width="88" height="43">KTH</td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 NPGA 
+											</td>
+											<td align="center" width="231" height="43">NABINAGAR POWER GENERATING COMPANY LTD. (NPGCL)             </td>
+											<td align="center" width="88" height="43">ANH </td>
+											
+											
+
+										</tr>
+										
+<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 NBCC
+											</td>
+											<td align="center" width="231" height="43">	BHARTIYA RAIL BIJLI COMPANY LTD.           </td>
+											<td align="center" width="88" height="43">NBG </td>
+											
+											
+
+										</tr>
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 PCCS 
+											</td>
+											<td align="center" width="231" height="43">PATHERDI COAL WASHERY                                       </td>
+											<td align="center" width="88" height="43">PEH </td>
+										
+
+										</tr>
+										
+
+
+										
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 PHLR 
+											</td>
+											<td align="center" width="231" height="43">HPCL SIDING RANCHI ROAD                                     </td>
+											<td align="center" width="88" height="43">RRME</td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 PIDH 
+											</td>
+											<td align="center" width="231" height="43">POL (IOC, HPC AND BPC) SIDING DHANBAD                       </td>
+											<td align="center" width="88" height="43">DHN </td>
+										
+
+										</tr>
+										
+
+
+									
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 RCSB 
+											</td>
+											<td align="center" width="231" height="43">RAJHURA COLLIERY SIDING                                     </td>
+											<td align="center" width="88" height="43">RHR </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 RDML 
+											</td>
+											<td align="center" width="231" height="43">RAJDHAR SIDING                                              </td>
+											<td align="center" width="88" height="43">MGME</td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SBKT 
+											</td>
+											<td align="center" width="231" height="43">SENDRA BANSJORA COLLIERY SIDING                             </td>
+											<td align="center" width="88" height="43">JRI </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SCPT 
+											</td>
+											<td align="center" width="231" height="43">SIRKA SIDING                                                </td>
+											<td align="center" width="88" height="43">RRME</td>
+											
+
+										</tr>
+										
+
+
+									
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SCR  
+											</td>
+											<td align="center" width="231" height="43">REGA SUGAR CORPN SIDING REGA                                </td>
+											<td align="center" width="88" height="43">RIGA</td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SCW  
+											</td>
+											<td align="center" width="231" height="43">SWANG WASHERY SIDING                                        </td>
+											<td align="center" width="88" height="43">GMIA</td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SFCS 
+											</td>
+											<td align="center" width="231" height="43">FCI SIDING SAHARSA                                          </td>
+											<td align="center" width="88" height="43">SHC </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SLCP 
+											</td>
+											<td align="center" width="231" height="43">SAYAL COLLIERY SIDING                                       </td>
+											<td align="center" width="88" height="43">PTRU</td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SNFC 
+											</td>
+											<td align="center" width="231" height="43">ASSOCIATED CEMENT CO. SDG, SINDRI TOWN                      </td>
+											<td align="center" width="88" height="43">SNDT</td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SNFC 
+											</td>
+											<td align="center" width="231" height="43">Associated Cement Co.s. Siding (Sindri)                     </td>
+											<td align="center" width="88" height="43">SNMY</td>
+											
+
+										</tr>
+										
+
+
+									
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SNFP 
+											</td>
+											<td align="center" width="231" height="43">SINDRI ASSISTED SDG                                         </td>
+											<td align="center" width="88" height="43">SNDT</td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 SSCK 
+											</td>
+											<td align="center" width="231" height="43">SIJUA STABLING COLLIERY SDG                                 </td>
+											<td align="center" width="88" height="43">JRI </td>
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 TPST 
+											</td>
+											<td align="center" width="231" height="43">TORI PUBLIC SIDING                                          </td>
+											<td align="center" width="88" height="43">TORI</td>
+											
+											
+
+										</tr>
+										
+
+
+										<tr>
+											<td align="center" width="70" height="43">ECR</td>
+											<td align="center" width="70" height="43">
+											 TTPD 
+											</td>
+											<td align="center" width="231" height="43">TENUGHAT THERMAL POWER STATION SIDING                       </td>
+											<td align="center" width="88" height="43">DMBR</td>
+											
+											
+
+										</tr>
+										
+									</tbody>
+								</table>
+								</center>
+								 
+								</center>
+								<input type="hidden" name="sidCode"> <input type="hidden" name="selVldFrom"> <input type="hidden" name="selVldUpto"></form>
+
+							
+						</td>
+						<td></td>
+					</tr>
+
+				</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
