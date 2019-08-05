@@ -11,15 +11,3 @@
 </head>
 <iframe  sandbox="allow-same-origin allow-scripts allow-popups allow-forms" allowfullscreen src="https://cms.indianrail.gov.in/CMSREPORT/JSPRWD/rpt/ReportLogin.jsp" name="iframe985426" width="900px" height="1600px" scrolling="auto" frameborder="1" align="center"></iframe>
 
- <script>
-     window.addEventListener('message', function (e) {
-       var mainWindow = e.source;
-       var result = '';
-       try {
-         result = eval(e.data);
-       } catch (e) {
-         result = 'eval() threw an exception.';
-       }
-       mainWindow.postMessage(result, event.origin);
-     });
-   </script>
