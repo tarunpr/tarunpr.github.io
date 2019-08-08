@@ -1,60 +1,3 @@
-
-<head>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145140302-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-145140302-1');
-</script>
-  <meta charset="UTF-8">
-  <title>CMS REPORT</title>
-  
-  
-  
-      
-
-  
-</head>
-
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong> New Update</strong><a href= "https://drive.google.com/file/d/1ceguL-Fi2vvPaSpCORnqAZ9urMKDUJyT/view?usp=sharing" target="_new">download  mgs guard helper new version 1.51</a> for best experience
-</div>
-
-
-
-
-<style>
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-}
-
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: black;
-}
-</style>
-
-
-
-
 <!DOCTYPE html>
 <!-- saved from url=(0089)https://cms.indianrail.gov.in/CMSREPORT/JSP/rpt/LoginAction.do?hmode=login&isResponsive=Y -->
 <html class="gr__cms_indianrail_gov_in"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -90,6 +33,7 @@
    <!--To check, browser supports ajax or not -->
   <!-- <script src="../../JSWRWD/scripts/ajaxjsCMSREPORT.js"></script> -->
 
+
 <script type="text/javascript">
 
 
@@ -121,16 +65,16 @@ function getUserType() {
 function callAction()
 {
 	str=navigator.userAgent;	
-	if(str.indexOf("Android") != -1 && 605 > 30000){
-		alert('Android Sessions is limit to '+30000);
+	if(str.indexOf("Android") != -1 && 605 > 3000){
+		alert('Android Sessions is limit to '+3000);
 		return false;
 	}else{
 		if(true){
-			if(605 > 50000 ){
-				alert('Sessions is limit to '+50000+'. Please use mgs guard helper app to open REPORTS.');
+			if(605 > 5000 ){
+				alert('Sessions is limit to '+5000+'. Please use http://10.60.200.168/ on FOIS network to open REPORTS.');
 				return false;
 			}else{
-				document.forms[0].action ="https://cms.indianrail.gov.in/CMSREPORT/JSP/rpt/LoginAction.do?hmode=login&isResponsive=N";
+				document.forms[0].action ="../../JSP/rpt/LoginAction.do?hmode=login&isResponsive=Y";
 				document.forms[0].submit();	
 			}
 		}else{
@@ -147,7 +91,7 @@ function callAction()
     
 function reload(){	
 	img = document.getElementById("capt");
-	img.src="https://cms.indianrail.gov.in/CMSREPORT/JSP/jcaptcha.jpg?rand_number=" + Math.random();
+	img.src="../../JSP/jcaptcha.jpg?rand_number=" + Math.random();
 }
 
 $('img[data-toggle="tooltip"]').tooltip({
@@ -317,14 +261,7 @@ vertical-align: middle;
 padding: 2px;
 }
 </style>
-  <script>
-
-function upperCaseF(a){
-    setTimeout(function(){
-        a.value = a.value.toUpperCase();
-    }, 1);
-}
-</script>
+  
 </head>
 <body class="hold-transition login-page" onload="getUserType();" data-gr-c-s-loaded="true"> <!-- javascript:loadContentREPORT(checkIP()); -->
 <section class="content container-fluid">
@@ -334,8 +271,8 @@ function upperCaseF(a){
    
    <div id="mainDivInBack" class="col-sm-12">
   <div class="row" style="position: absolute;">
-	<img src="./CMS REPORT _ Login_files/IR.png" class="topleft"  alt="Indian Railway" data-toggle="tooltip" data-placement="top" title="Indian Railway" >
-   <img src="./CMS REPORT _ Login_files/cris.png" class="topright"  alt="Centre For Railway Information Systems" title="Centre For Railway Information Systems" width="70" height="70">
+	<img src="./CMS REPORT _ Login_files/IR.png" class="topleft" onclick="window.open(&#39;http://www.indianrailways.gov.in/&#39;);" alt="Indian Railway" data-toggle="tooltip" data-placement="top" title="Indian Railway">
+   <img src="./CMS REPORT _ Login_files/cris.png" class="topright" onclick="window.open(&#39;http://www.cris.org.in/&#39;);" alt="Centre For Railway Information Systems" title="Centre For Railway Information Systems">
 </div>
      
      
@@ -344,13 +281,13 @@ function upperCaseF(a){
   <!-- /.login-logo -->
   <div class="login-box-body bringtofront">
     <div class="login-logo" style="margin-top:-7px;">
-    	<a href="https://cms.indianrail.gov.in/CMSREPORT/JSP/rpt/LoginAction.do?hmode=login&amp;isResponsive=Y#"><b>CMS</b>Report</a> 
+    	<a href="https://cms.indianrail.gov.in/CMSREPORT/JSP/rpt/LoginAction.do?hmode=login&amp;isResponsive=Y#"><b>CMS</b>Report</a> <button type="button" class="btn btn-default btn-circle btn-lg"> <i class="fa fa-bar-chart"></i></button> 
     	<!-- <i class="fa fa-bar-chart fa-2x circle-icon" style="color: #fff;"></i> -->
     </div>
 	
 	<div class="row">
 		<div class="col-sm-6 leftDivPanel">
-			<img src="./CMS REPORT _ Login_files/helper.png" class="img-responsive" alt="CREW MANAGEMENT SYSTEM" style="margin-top: 0px;" width="80%" height="80%">
+			<img src="./CMS REPORT _ Login_files/crewcab1.jpg" class="img-responsive" alt="CREW MANAGEMENT SYSTEM" style="margin-top: 0px;">
 			
 		</div>
 		<div class="col-sm-6 rightDivPanel">
@@ -360,18 +297,18 @@ function upperCaseF(a){
 			 	<input type="hidden" name="isResponsive" value="Y" class="form-control" id="isResponsive">
 			 </div>
 		      <div class="form-group has-feedback">
-		        <input type="text" name="userId" value="" class="form-control" id="User-Id" placeholder="UserId" onkeydown="upperCaseF(this)">
+		        <input type="text" name="userId" value="" class="form-control" id="User-Id" placeholder="UserId">
 		        <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
 		      </div>
 		      <div class="form-group has-feedback">
-		        <input type="password" name="userPassword" value="" class="form-control" id="user-Password" placeholder="Password" onkeydown="upperCaseF(this)">
+		        <input type="password" name="userPassword" value="" class="form-control" id="user-Password" placeholder="Password">
 		        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		      </div>
 			  
 			  
 			   <div class="row">
 			   <div class="col-xs-12 custom-radios">
-					<label class="container">Crew/LI Login<input type="checkbox" checked="checked" name="userType" value="CREW_LI"><span class="checkmark"></span></label>
+					<label class="container">Crew/LI Login<input type="checkbox" name="userType" value="CREW_LI"><span class="checkmark"></span></label>
 		        </div>
 		        </div>
 				
@@ -384,10 +321,10 @@ function upperCaseF(a){
 		      
 		      <div class="row">
 		        <div class="col-xs-4" style="vertical-align: middle;">
-				       	<img src="https://cms.indianrail.gov.in/CMSREPORT/JSP/jcaptcha.jpg" id="capt" style="width: 133px;height: 41px;">	
+				       	<img src="./CMS REPORT _ Login_files/jcaptcha.jpg" id="capt" style="width: 133px;height: 41px;">	
 				</div>
 				<div class="col-xs-4" style="float:right;margin-right: -36px;">
-						<a href="javascript:reload();" title="Reload Captcha"><img alt="reload captcha" src="reload.png" width="40" height="40"> </a>	
+						<a href="javascript:reload();" title="Refresh Captcha"><i class="fa fa-refresh" style="font-size:26px;"></i></a>	
 			  		</div>
 			  </div>	
 			  
@@ -424,7 +361,9 @@ function upperCaseF(a){
                 <!-- <p class="box-title text-red"></p> -->      
     </div>
  
-
+ <div class="row">
+ <p class="box-title" style="color: #0e0677 !important;">*Best viewed at 1600 x 900 resolution in Mozilla Firefox 40+, Google Chrome 46+</p>
+ </div>
     <!-- <a href="http://10.60.200.168/CMSREPORT/JSP/CMSReportHelp/Misc/EDW_HelpDocument.pdf">Edw Help Document</a><br> -->
   </div>
   <!-- /.login-box-body -->
@@ -463,18 +402,3 @@ function upperCaseF(a){
 
 
 <script type="text/javascript" async="" src="./CMS REPORT _ Login_files/212b3d4039ab5319ec.js.download"></script></body></html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
